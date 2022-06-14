@@ -126,9 +126,12 @@ namespace adiar
   {
     o << indent << bold_on << "levelized priority queue" << bold_off << endl;
 
-    const uintwide_t total_lpqs = stats.lpq.internal + stats.lpq.external;
+    const uintwide_t total_lpqs = stats.lpq.unbucketed + stats.lpq.internal + stats.lpq.external;
 
     indent_level++;
+    o << indent << label << "unbucketed internal memory"
+      << stats.lpq.internal << " = " << percent_frac(stats.lpq.unbucketed, total_lpqs) << percent << endl;
+
     o << indent << label << "internal memory"
       << stats.lpq.internal << " = " << percent_frac(stats.lpq.internal, total_lpqs) << percent << endl;
 

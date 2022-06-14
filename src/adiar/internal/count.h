@@ -45,11 +45,12 @@ namespace adiar
   };
 
   template <typename elem_t,
+            size_t LOOK_AHEAD,
             template<typename, typename> typename sorter_template = external_sorter,
             template<typename, typename> typename priority_queue_template = external_priority_queue>
   using count_priority_queue_t =
     levelized_node_priority_queue<elem_t, count_queue_label,
-                                  ADIAR_LPQ_LOOKAHEAD, count_queue_lt<elem_t>,
+                                  LOOK_AHEAD, count_queue_lt<elem_t>,
                                   sorter_template, priority_queue_template>;
 
   //////////////////////////////////////////////////////////////////////////////
@@ -148,13 +149,23 @@ namespace adiar
     const size_t aux_available_memory = memory::available() - node_stream<>::memory_usage();
 
     const size_t pq_memory_fits =
-      count_priority_queue_t<typename count_policy::queue_t>::memory_fits(aux_available_memory);
+      count_priority_queue_t<typename count_policy::queue_t, ADIAR_LPQ_LOOKAHEAD>::memory_fits(aux_available_memory);
 
-    if (max_pq_size <= pq_memory_fits) {
+    if (max_pq_size <= no_lookahead_bound()) {
+#ifdef ADIAR_STATS
+      stats_count.lpq.unbucketed++;
+#endif
+      return __count<count_policy, count_priority_queue_t<typename count_policy::queue_t,
+                                                          0,
+                                                          internal_sorter,
+                                                          internal_priority_queue>>
+        (dd, varcount, aux_available_memory, max_pq_size);
+    } else if (max_pq_size <= pq_memory_fits) {
 #ifdef ADIAR_STATS
       stats_count.lpq.internal++;
 #endif
       return __count<count_policy, count_priority_queue_t<typename count_policy::queue_t,
+                                                          ADIAR_LPQ_LOOKAHEAD,
                                                           internal_sorter,
                                                           internal_priority_queue>>
         (dd, varcount, aux_available_memory, max_pq_size);
@@ -163,6 +174,7 @@ namespace adiar
       stats_count.lpq.external++;
 #endif
       return __count<count_policy, count_priority_queue_t<typename count_policy::queue_t,
+                                                          ADIAR_LPQ_LOOKAHEAD,
                                                           external_sorter,
                                                           external_priority_queue>>
         (dd, varcount, aux_available_memory, max_pq_size);

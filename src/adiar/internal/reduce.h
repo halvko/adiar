@@ -51,15 +51,16 @@ namespace adiar
   /// \brief Decorator on the levelized priority queue to also keep track of
   ///        the number of arcs to each sink.
   ////////////////////////////////////////////////////////////////////////////
-  template<template<typename, typename> typename sorter_template,
+  template<size_t LOOK_AHEAD,
+           template<typename, typename> typename sorter_template,
            template<typename, typename> typename priority_queue_template>
   class reduce_priority_queue : public levelized_arc_priority_queue<arc_t, reduce_queue_label,
-                                                                    ADIAR_LPQ_LOOKAHEAD, reduce_queue_lt,
+                                                                    LOOK_AHEAD, reduce_queue_lt,
                                                                     sorter_template, priority_queue_template>
   {
   private:
     using inner_lpq = levelized_arc_priority_queue<arc_t, reduce_queue_label,
-                                                   ADIAR_LPQ_LOOKAHEAD, reduce_queue_lt,
+                                                   LOOK_AHEAD, reduce_queue_lt,
                                                    sorter_template, priority_queue_template>;
 
     ////////////////////////////////////////////////////////////////////////////
@@ -480,19 +481,25 @@ namespace adiar
 
     const size_t max_cut = in_file->max_1level_cut;
     const tpie::memory_size_type lpq_memory_fits =
-      reduce_priority_queue<internal_sorter, internal_priority_queue>::memory_fits(lpq_memory);
+      reduce_priority_queue<ADIAR_LPQ_LOOKAHEAD, internal_sorter, internal_priority_queue>::memory_fits(lpq_memory);
 
-    if(max_cut <= lpq_memory_fits) {
+    if(max_cut <= no_lookahead_bound(1)) {
+#ifdef ADIAR_STATS
+        stats_reduce.lpq.unbucketed++;
+#endif
+      return __reduce<dd_policy, reduce_priority_queue<ADIAR_LPQ_LOOKAHEAD, internal_sorter, internal_priority_queue>>
+        (in_file, lpq_memory, sorters_memory);
+    } else if(max_cut <= lpq_memory_fits) {
 #ifdef ADIAR_STATS
         stats_reduce.lpq.internal++;
 #endif
-      return __reduce<dd_policy, reduce_priority_queue<internal_sorter, internal_priority_queue>>
+      return __reduce<dd_policy, reduce_priority_queue<ADIAR_LPQ_LOOKAHEAD, internal_sorter, internal_priority_queue>>
         (in_file, lpq_memory, sorters_memory);
     } else {
 #ifdef ADIAR_STATS
         stats_reduce.lpq.external++;
 #endif
-      return __reduce<dd_policy, reduce_priority_queue<external_sorter, external_priority_queue>>
+      return __reduce<dd_policy, reduce_priority_queue<ADIAR_LPQ_LOOKAHEAD, external_sorter, external_priority_queue>>
         (in_file, lpq_memory, sorters_memory);
     }
   }

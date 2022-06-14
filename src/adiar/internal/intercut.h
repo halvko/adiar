@@ -21,11 +21,12 @@ namespace adiar
   //////////////////////////////////////////////////////////////////////////////
   // Priority queues
 
-  template<template<typename, typename> typename sorter_template,
+  template<size_t LOOK_AHEAD,
+           template<typename, typename> typename sorter_template,
            template<typename, typename> typename priority_queue_template>
   using intercut_priority_queue_1_t =
     levelized_node_priority_queue<arc_t, arc_target_label,
-                                  ADIAR_LPQ_LOOKAHEAD, arc_target_lt,
+                                  LOOK_AHEAD, arc_target_lt,
                                   sorter_template, priority_queue_template,
                                   1u,
                                   0u>;
@@ -56,11 +57,12 @@ namespace adiar
     }
   };
 
-  template<template<typename, typename> typename sorter_template,
+  template<size_t LOOK_AHEAD,
+           template<typename, typename> typename sorter_template,
            template<typename, typename> typename priority_queue_template>
   using intercut_priority_queue_2_t =
     levelized_label_priority_queue<arc_cut, arc_cut_label,
-                                   ADIAR_LPQ_LOOKAHEAD, arc_cut_lt,
+                                   LOOK_AHEAD, arc_cut_lt,
                                    sorter_template, priority_queue_template,
                                    1u,
                                    0u>;
@@ -347,10 +349,10 @@ namespace adiar
     const size_t max_pq_size = __intercut_2level_upper_bound<intercut_policy>(dd);
 
     constexpr size_t data_structures_in_pq_1 =
-      intercut_priority_queue_1_t<internal_sorter, internal_priority_queue>::DATA_STRUCTURES;
+      intercut_priority_queue_1_t<ADIAR_LPQ_LOOKAHEAD, internal_sorter, internal_priority_queue>::DATA_STRUCTURES;
 
     constexpr size_t data_structures_in_pq_2 =
-      intercut_priority_queue_2_t<internal_sorter, internal_priority_queue>::DATA_STRUCTURES;
+      intercut_priority_queue_2_t<ADIAR_LPQ_LOOKAHEAD, internal_sorter, internal_priority_queue>::DATA_STRUCTURES;
 
     const size_t pq_1_internal_memory =
       (aux_available_memory / (data_structures_in_pq_1 + data_structures_in_pq_2)) * data_structures_in_pq_1;
@@ -358,18 +360,26 @@ namespace adiar
     const size_t pq_2_internal_memory = aux_available_memory - pq_1_internal_memory;
 
     const size_t pq_1_memory_fits =
-      intercut_priority_queue_1_t<internal_sorter, internal_priority_queue>::memory_fits(pq_1_internal_memory);
+      intercut_priority_queue_1_t<ADIAR_LPQ_LOOKAHEAD, internal_sorter, internal_priority_queue>::memory_fits(pq_1_internal_memory);
 
     const size_t pq_2_memory_fits =
-      intercut_priority_queue_2_t<internal_sorter, internal_priority_queue>::memory_fits(pq_2_internal_memory);
+      intercut_priority_queue_2_t<ADIAR_LPQ_LOOKAHEAD, internal_sorter, internal_priority_queue>::memory_fits(pq_2_internal_memory);
 
-    if(max_pq_size <= pq_1_memory_fits && max_pq_size <= pq_2_memory_fits) {
+    if(max_pq_size <= no_lookahead_bound(1)) {
+#ifdef ADIAR_STATS
+      stats_intercut.lpq.unbucketed++;
+#endif
+      return __intercut<intercut_policy,
+                        intercut_priority_queue_1_t<0, internal_sorter, internal_priority_queue>,
+                        intercut_priority_queue_2_t<0, internal_sorter, internal_priority_queue>>
+        (dd, labels, pq_1_internal_memory, pq_2_internal_memory, max_pq_size);
+    } else if(max_pq_size <= pq_1_memory_fits && max_pq_size <= pq_2_memory_fits) {
 #ifdef ADIAR_STATS
       stats_intercut.lpq.internal++;
 #endif
       return __intercut<intercut_policy,
-                        intercut_priority_queue_1_t<internal_sorter, internal_priority_queue>,
-                        intercut_priority_queue_2_t<internal_sorter, internal_priority_queue>>
+                        intercut_priority_queue_1_t<ADIAR_LPQ_LOOKAHEAD, internal_sorter, internal_priority_queue>,
+                        intercut_priority_queue_2_t<ADIAR_LPQ_LOOKAHEAD, internal_sorter, internal_priority_queue>>
         (dd, labels, pq_1_internal_memory, pq_2_internal_memory, max_pq_size);
     } else {
 #ifdef ADIAR_STATS
@@ -379,8 +389,8 @@ namespace adiar
       const size_t pq_2_memory = aux_available_memory - pq_1_memory;
 
       return __intercut<intercut_policy,
-                        intercut_priority_queue_1_t<external_sorter, external_priority_queue>,
-                        intercut_priority_queue_2_t<external_sorter, external_priority_queue>>
+                        intercut_priority_queue_1_t<ADIAR_LPQ_LOOKAHEAD, external_sorter, external_priority_queue>,
+                        intercut_priority_queue_2_t<ADIAR_LPQ_LOOKAHEAD, external_sorter, external_priority_queue>>
         (dd, labels, pq_1_memory, pq_2_memory, max_pq_size);
     }
   }
