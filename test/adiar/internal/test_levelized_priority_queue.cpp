@@ -2490,7 +2490,7 @@ go_bandit([]() {
           { // Garbage collect the writer early
             label_writer fw(f);
             fw << 1       // skipped
-               << 2; // not skipped
+               << 2;      // not skipped
           }
 
           test_priority_queue<label_file, 0> pq({f}, memory::available(), 32, stats_lpq_tests);
@@ -2525,9 +2525,8 @@ go_bandit([]() {
 
           { // Garbage collect the writer early
             label_writer fw(f);
-            fw << 1      // skipped
-               << 2 << 4 // buckets
-               << 5;     // overflow
+            fw << 1            // skipped
+               << 2 << 4 << 5; // not skipped
           }
 
           test_priority_queue<label_file, 0> pq({f}, memory::available(), 32, stats_lpq_tests);

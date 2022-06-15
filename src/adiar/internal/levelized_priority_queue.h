@@ -1049,19 +1049,9 @@ namespace adiar {
     const tpie::memory_size_type _memory_given;
 
     ////////////////////////////////////////////////////////////////////////////
-    /// \brief Memory used by the label merger.
-    ////////////////////////////////////////////////////////////////////////////
-    tpie::memory_size_type _memory_occupied_by_merger;
-
-    ////////////////////////////////////////////////////////////////////////////
     /// \brief Memory to be used for the priority queue.
     ////////////////////////////////////////////////////////////////////////////
     tpie::memory_size_type _memory_occupied_by_priority_queue;
-
-    ////////////////////////////////////////////////////////////////////////////
-    /// \brief Provides the levels to distribute all elements across.
-    ////////////////////////////////////////////////////////////////////////////
-    mutable label_merger<file_t, level_comp_t, FILES> _level_merger;
 
     ////////////////////////////////////////////////////////////////////////////
     /// \brief Overflow priority queue used for elements pushed to a level where
@@ -1093,7 +1083,6 @@ namespace adiar {
                              [[maybe_unused]] stats_t::levelized_priority_queue_t &stats)
       : _max_size(max_size),
         _memory_given(memory_given),
-        _memory_occupied_by_merger(memory::available()),
         _memory_occupied_by_priority_queue(m_priority_queue(memory_given)),
         _priority_queue(m_priority_queue(memory_given), max_size)
 #ifdef ADIAR_STATS_EXTRA
@@ -1114,10 +1103,7 @@ namespace adiar {
                              size_t max_size,
                              stats_t::levelized_priority_queue_t &stats)
       : levelized_priority_queue(memory_given, max_size, stats)
-    {
-      _level_merger.hook(files);
-      init();
-    }
+    { }
 
     ////////////////////////////////////////////////////////////////////////////
     /// \brief              Instantiate with the given amount of memory.
@@ -1131,10 +1117,7 @@ namespace adiar {
                              size_t max_size,
                              stats_t::levelized_priority_queue_t &stats)
       : levelized_priority_queue(memory_given, max_size, stats)
-    {
-      _level_merger.hook(dds);
-      init();
-    }
+    { }
 
   private:
     ////////////////////////////////////////////////////////////////////////////
@@ -1146,11 +1129,7 @@ namespace adiar {
     ////////////////////////////////////////////////////////////////////////////
     void init()
     {
-      label_t skip_level = 0;
-      while(_level_merger.can_pull() && level_cmp_lt(skip_level, INIT_LEVEL)) {
-        _level_merger.pull();
-        skip_level++;
-      }
+
     }
 
   public:
@@ -1197,15 +1176,17 @@ namespace adiar {
     bool has_next_level() /*const*/
     {
       label_t next_label_from_queue = elem_level_t::label_of(_priority_queue.top());
-      return _level_merger.can_pull() || (has_current_level() && level_cmp_lt(_current_level, next_label_from_queue));
+      return (has_current_level() && level_cmp_lt(_current_level, next_label_from_queue))
+              || (!has_current_level() && !_priority_queue.empty());
     }
 
     ////////////////////////////////////////////////////////////////////////////
     /// \brief The label of the next (possibly empty) level.
     ////////////////////////////////////////////////////////////////////////////
-    label_t next_level() const
+    label_t next_level() /*const*/
     {
-      return _level_merger.peek();
+      label_t result = elem_level_t::label_of(_priority_queue.top());
+      return result;
     }
 
     ////////////////////////////////////////////////////////////////////////////
@@ -1248,8 +1229,8 @@ namespace adiar {
       adiar_debug(has_stop_level || !empty(),
                   "Either a stop level is given or we have some non-empty level to forward to");
 
-      adiar_debug(has_next_level(),
-                  "There should be a next level to go to");
+      /*adiar_debug(has_next_level(),
+                  "There should be a next level to go to");*/
 
       // Edge Case: ---------------------------------------------------------- :
       //   The given stop_level is prior to the next level
@@ -1258,29 +1239,23 @@ namespace adiar {
       }
 
       // Edge Case: ---------------------------------------------------------- :
-      //   There is nothing in the queue - get the next level from the level_merger
+      //   There is nothing in the queue - set the next level to the stop level
       if(_priority_queue.empty()) {
-        _current_level = _level_merger.pull();
+        _current_level = stop_level;
         return;
       }
 
       // Edge Case: ---------------------------------------------------------- :
-      //   The stop level is before the next level of the queue - forward the
-      //   level_merger until it is at the stop level
+      //   The stop level is before the next level of the queue
       label_t next_label_from_queue = elem_level_t::label_of(_priority_queue.top());
       if(has_stop_level && level_cmp_le(stop_level, next_label_from_queue)) {
-        while(_level_merger.can_pull() && level_cmp_le(_level_merger.peek(), stop_level)) {
-          _current_level = _level_merger.pull();
-        }
+        _current_level = stop_level;
         return;
       }
 
       // Primary Case: ------------------------------------------------------- :
       //   Set the level to be the next from the queue, and forward the level_merger
       _current_level = next_label_from_queue;
-      while(_level_merger.can_pull() && level_cmp_le(_level_merger.peek(), _current_level)) {
-        _level_merger.pull();
-      }
     }
 
     ////////////////////////////////////////////////////////////////////////////
@@ -1291,8 +1266,8 @@ namespace adiar {
     {
       // TODO: change semantics to require 'has_current_level'
       return !has_current_level() ||
-        (_priority_queue.empty()
-             || current_level() != elem_level_t::label_of(_priority_queue.top()));
+             _priority_queue.empty() ||
+             current_level() != elem_level_t::label_of(_priority_queue.top());
     }
 
     ////////////////////////////////////////////////////////////////////////////

@@ -365,7 +365,7 @@ namespace adiar
     const size_t pq_2_memory_fits =
       intercut_priority_queue_2_t<ADIAR_LPQ_LOOKAHEAD, internal_sorter, internal_priority_queue>::memory_fits(pq_2_internal_memory);
 
-    if(max_pq_size <= no_lookahead_bound(1)) {
+    /*if(max_pq_size <= no_lookahead_bound(1)) {
 #ifdef ADIAR_STATS
       stats_intercut.lpq.unbucketed++;
 #endif
@@ -373,7 +373,7 @@ namespace adiar
                         intercut_priority_queue_1_t<0, internal_sorter, internal_priority_queue>,
                         intercut_priority_queue_2_t<0, internal_sorter, internal_priority_queue>>
         (dd, labels, pq_1_internal_memory, pq_2_internal_memory, max_pq_size);
-    } else if(max_pq_size <= pq_1_memory_fits && max_pq_size <= pq_2_memory_fits) {
+    } else*/ if(max_pq_size <= pq_1_memory_fits && max_pq_size <= pq_2_memory_fits) {
 #ifdef ADIAR_STATS
       stats_intercut.lpq.internal++;
 #endif
