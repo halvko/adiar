@@ -16,6 +16,7 @@ may constitute interesting undergraduate and graduate projects.
         - [Hash Values](#hash-values)
         - [Proof Logging](#proof-logging)
         - [Boolean Vectors](#boolean-vectors)
+        - [Boolean Polynomials](#boolean-polynomial)
     - [Other Decision Diagrams](#other-decision-diagrams)
         - [Chained Decision Diagrams](#chained-decision-diagrams)
         - [Multi-Terminal Binary Decision Diagrams](#multi-terminal-binary-decision-diagrams)
@@ -309,6 +310,112 @@ templated value underneath.
 
 `bdd_eq(x,y)`, `bdd_neq(x,y)` `bdd_lt(x,y)`, `bdd_le(x,y)`, `bdd_gt(x,y)`, `bdd_ge(x,y)`
 
+### Boolean Polynomials
+
+The PolyBoRi library [[Brickenstein09](#references)] implements Polynomials
+over the Boolean Ring with ZDDs. To the best of my knowledge, this approach
+in PolyBoRi is the best approach we have, but it often runs out of memory.
+
+Hence, I believe *Adiar* may be able to contribute to the area of cryptography
+by us providing a new class: `bp` (**b**oolean **polynomial**). This is a new
+new `decision_diagram` class that directly resuses many *zdd* policies. The
+semantics for `bp` are, that each path in the DAG describe the variables that
+are multiplied together in a single term. Different paths are then the
+variables that are the different terms that are added together.
+
+**Operations**
+
+- `bp_zero()` (result of default constructor)
+
+  Equivalent to the `sink(false)` constructor.
+
+- `bp_one()`
+
+  Equivalent to the `sink(true)` constructor.
+
+- `bp_ithvar(i)`
+
+  The shared `ithvar` constructor used in `bdd_ithvar`.
+
+- `bp_plus(f,g)` (operator: `+`)
+
+  This is merely the `product_construction` using the same strategy as for
+  `zdd_setop` and with the *XOR* operator.
+  
+- `bp_mult(f,g)` (operator: `*`)
+
+  The following algorithm multiplies the variables into the parentheses.
+  ```python
+  pbr_mult(f, g):
+    if f = 1:
+      return g
+    if f = 0 or g = 0:
+      return 0
+    if g = 1 or f = g:
+      return f
+
+    (fl, fh) = min(f.var, g.var) = f.var ? (f.low, f.high) : (f, f)
+    (gl, gh) = min(f.var, g.var) = g.var ? (g.low, g.high) : (g, g)
+
+    low = (fl * gh) + (fh * gh) + (fh * gl)
+    high = fl * gl
+
+    return (min(f.var, g.var), low, high)
+  ```
+  Requires the multi-recursion framework, but notice, that the *low* will
+  require three independent recursion requests. So, we would need to further
+  generalise it to allow multiple recursion results to be made for the same
+  "direction". One may want to abuse, that + is commutative, and so they do
+  not have to come in the specific order they are declared.
+
+- `bp_div` (operator: `/`)
+
+  ?
+
+- `bp_divides` (operator: `|`)
+
+  ?
+
+- `bp_degree(f)`
+
+  A simple top-down traversal that can be done with the counting template
+  algorithm. The only differences are:
+  1. The counter is only incremented by one when pushing along the *high*.
+  2. Instead of summing values together when reaching a sink, one takes
+     the *maximum* instead.
+
+- `bp_lead(f)`
+
+  To compute the leading term, we have to report (one of) the longest
+  **true** paths in the ZDD. Ties between multiple terms with the same
+  degree may be broken lexicographically.
+  
+  Assuming every node already stores its own degree, i.e. the length of its
+  deepest path, then this is a simple traversal akin to `zdd_maxelem`. This
+  value can be maintained within the Reduce operation. Yet, this increases
+  the ZDD size by 1/6th.
+  
+  But, otherwise this becomes similar to a simple case of the
+  [Linear Optimisation](#linear-optimisation) feature proposed above.
+
+- `bp_terms(f)`
+
+  Provides an iterator over all terms, i.e. all paths leading to **1**. This
+  is similar to the `bdd_satall` operation requested further
+  [above](#advanced-satisfiability-functions).
+
+- `bp_gnf(f,G)`
+
+  Computes the *Greedy Normal Form* (see [Brickenstein09](#references)) of a
+  polynomial *f* with respect to a finite set *G* of boolean polynomials.
+  ```python
+  bp_gnf(f,G):
+    f' = f
+    while f' != 0 and some g in G bp_lead(g) | bp_lead(f):
+      f' = f' - (f' / bp_lead(g))
+    return f'
+  ```
+
 ## Other Decision Diagrams
 
 ### Chained Decision Diagrams
@@ -548,6 +655,11 @@ keep the disk usage close to what otherwise would be used.
   Karl S. Brace, Richard L. Rudell, and Randal E. Bryant. “_Efficient
   implementation of a BDD package_”. In: _Information Processing Letters 10.2_.
   (1980)
+
+- [[Brickenstein09](https://www.sciencedirect.com/science/article/pii/S0747717109000273?ref=cra_js_challenge&fr=RR-1)]
+  Michael Brickenstein, Alexander Dreyer. “_PolyBoRi: A framework for
+  Gröbner-basis computations with Boolean polynomials_”. In: _Journal of
+  Symbolic Computation_. (2009)
 
 - [[Bryant18](https://link.springer.com/chapter/10.1007/978-3-319-89960-2_5)]
   Randal E. Bryant. “_Chain Reduction for Binary and Zero-Suppressed Decision
