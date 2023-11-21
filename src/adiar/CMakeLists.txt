@@ -49,6 +49,7 @@ set(HEADERS
   internal/algorithms/count.h
   internal/algorithms/intercut.h
   internal/algorithms/nested_sweeping.h
+  internal/algorithms/optmin.h
   internal/algorithms/pred.h
   internal/algorithms/prod2.h
   internal/algorithms/quantify.h
@@ -108,6 +109,7 @@ set(SOURCES
   bdd/evaluate.cpp
   bdd/if_then_else.cpp
   bdd/negate.cpp
+  bdd/optmin.cpp
   bdd/pred.cpp
   bdd/quantify.cpp
   bdd/restrict.cpp
@@ -130,6 +132,7 @@ set(SOURCES
   internal/algorithms/count.cpp
   internal/algorithms/intercut.cpp
   internal/algorithms/nested_sweeping.cpp
+  internal/algorithms/optmin.cpp
   internal/algorithms/pred.cpp
   internal/algorithms/prod2.cpp
   internal/algorithms/quantify.cpp
