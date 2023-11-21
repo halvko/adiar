@@ -1,13 +1,15 @@
 var searchData=
 [
-  ['slow_5fcheck_678',['slow_check',['../structadiar_1_1stats__t_1_1equality__t.html#a52786721545f3aae060e46d3f0c5eeb7',1,'adiar::stats_t::equality_t']]],
-  ['sort_5fout_5fof_5forder_679',['sort_out_of_order',['../structadiar_1_1stats__t_1_1arc__file__t.html#a9cda3be7490f6c5f41fd8b5ec00427a1',1,'adiar::stats_t::arc_file_t']]],
-  ['sorted_5ftarget_680',['sorted_target',['../classadiar_1_1internal_1_1request_3_01CARDINALITY_00_010_00_01INPUTS_01_4.html#a96f75366df9bf6356ff15f0d26cae7a3',1,'adiar::internal::request&lt; CARDINALITY, 0, INPUTS &gt;']]],
-  ['substitute_681',['substitute',['../structadiar_1_1stats__t.html#a445265e11e1dbd28d7d399c77767f964',1,'adiar::stats_t']]],
-  ['sum_5factual_5fmax_5fsize_682',['sum_actual_max_size',['../structadiar_1_1stats__t_1_1levelized__priority__queue__t.html#a1a8b129022314cd75b715d09df14dc9a',1,'adiar::stats_t::levelized_priority_queue_t']]],
-  ['sum_5fdestructors_683',['sum_destructors',['../structadiar_1_1stats__t_1_1levelized__priority__queue__t.html#ae1fcb08cfff11c545f9b39a6c451c7a0',1,'adiar::stats_t::levelized_priority_queue_t']]],
-  ['sum_5fmax_5fsize_5fratio_684',['sum_max_size_ratio',['../structadiar_1_1stats__t_1_1levelized__priority__queue__t.html#a5154e57535210bd495f07828369b89f9',1,'adiar::stats_t::levelized_priority_queue_t']]],
-  ['sum_5fnode_5farcs_685',['sum_node_arcs',['../structadiar_1_1stats__t_1_1reduce__t.html#a7dc1209b0c4e9d56b733cef13514cade',1,'adiar::stats_t::reduce_t']]],
-  ['sum_5fpredicted_5fmax_5fsize_686',['sum_predicted_max_size',['../structadiar_1_1stats__t_1_1levelized__priority__queue__t.html#adbb00047f1127e2a664949e29533d83e',1,'adiar::stats_t::levelized_priority_queue_t']]],
-  ['sum_5fterminal_5farcs_687',['sum_terminal_arcs',['../structadiar_1_1stats__t_1_1reduce__t.html#a5b5e4a1e3dc0db9c609a12fd44c0e78b',1,'adiar::stats_t::reduce_t']]]
+  ['select_772',['select',['../structadiar_1_1statistics.html#a5fef3cc964d00844ce46cc8afa7aff8c',1,'adiar::statistics']]],
+  ['slow_5fcheck_773',['slow_check',['../structadiar_1_1statistics_1_1equality__t.html#a889424f58afa95ef6f985763fcd1674e',1,'adiar::statistics::equality_t']]],
+  ['sort_5fon_5ftiebreak_774',['sort_on_tiebreak',['../classadiar_1_1internal_1_1with__parent.html#afd6aed4fd4956ae0287766322d670aa2',1,'adiar::internal::with_parent']]],
+  ['sort_5fout_5fof_5forder_775',['sort_out_of_order',['../structadiar_1_1statistics_1_1arc__file__t.html#a3a8ee42e74efd8bf7b906930b3630372',1,'adiar::statistics::arc_file_t']]],
+  ['sorted_5ftarget_776',['sorted_target',['../classadiar_1_1internal_1_1request_3_01Cardinality_00_010_00_01Inputs_01_4.html#ad82b56b4cacdb614dcde8215033fb2dd',1,'adiar::internal::request&lt; Cardinality, 0, Inputs &gt;']]],
+  ['source_777',['source',['../classadiar_1_1internal_1_1with__parent.html#ad0da52d1a6a520511e989c23bb93f1e2',1,'adiar::internal::with_parent']]],
+  ['sum_5factual_5fmax_5fsize_778',['sum_actual_max_size',['../structadiar_1_1statistics_1_1levelized__priority__queue__t.html#ae485ef1f9462d3c8106dc37a519ca896',1,'adiar::statistics::levelized_priority_queue_t']]],
+  ['sum_5fdestructors_779',['sum_destructors',['../structadiar_1_1statistics_1_1levelized__priority__queue__t.html#a18db66cef68fc1e68532347a86bd3d2b',1,'adiar::statistics::levelized_priority_queue_t']]],
+  ['sum_5fmax_5fsize_5fratio_780',['sum_max_size_ratio',['../structadiar_1_1statistics_1_1levelized__priority__queue__t.html#a6cbf004655dd759cc729fad62a47321d',1,'adiar::statistics::levelized_priority_queue_t']]],
+  ['sum_5fnode_5farcs_781',['sum_node_arcs',['../structadiar_1_1statistics_1_1reduce__t.html#a2519ee24c18aafb9177078b92d6c338d',1,'adiar::statistics::reduce_t']]],
+  ['sum_5fpredicted_5fmax_5fsize_782',['sum_predicted_max_size',['../structadiar_1_1statistics_1_1levelized__priority__queue__t.html#acbc2d26c2cafb41e66a1965679dfbc78',1,'adiar::statistics::levelized_priority_queue_t']]],
+  ['sum_5fterminal_5farcs_783',['sum_terminal_arcs',['../structadiar_1_1statistics_1_1reduce__t.html#a624cd625bf7ff160e3625ddf65cca558',1,'adiar::statistics::reduce_t']]]
 ];

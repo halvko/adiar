@@ -1,14 +1,13 @@
 var searchData=
 [
-  ['can_5fleft_5fshortcut_79',['can_left_shortcut',['../namespaceadiar.html#ae0589496dcbf820882d5734309c5bf25',1,'adiar']]],
-  ['can_5fright_5fshortcut_80',['can_right_shortcut',['../namespaceadiar.html#a2fd157e82fc01aec26ca0ffbf27557d2',1,'adiar']]],
-  ['cardinality_81',['cardinality',['../classadiar_1_1internal_1_1request_3_01CARDINALITY_00_010_00_01INPUTS_01_4.html#a97e0e60c566699fb2c4bf5f461f48854',1,'adiar::internal::request&lt; CARDINALITY, 0, INPUTS &gt;::cardinality()'],['../classadiar_1_1internal_1_1tuple.html#a85f8c36e2eec24e4ea023fd63fcc9cc5',1,'adiar::internal::tuple::cardinality()']]],
-  ['child_82',['child',['../classadiar_1_1internal_1_1node.html#adfd296084440a9e40620429459763d6b',1,'adiar::internal::node']]],
-  ['children_83',['children',['../classadiar_1_1internal_1_1node.html#a992fb0ef5982fe3a8044100acda226b3',1,'adiar::internal::node']]],
-  ['children_5ft_84',['children_t',['../classadiar_1_1internal_1_1node.html#ac4221aa0936684cdb6790a1b43c5f300',1,'adiar::internal::node::children_t()'],['../classadiar_1_1internal_1_1request_3_01CARDINALITY_00_010_00_01INPUTS_01_4.html#a45ec52929d634ac0329942afdb0fdc8e',1,'adiar::internal::request&lt; CARDINALITY, 0, INPUTS &gt;::children_t()']]],
-  ['citing_20this_20project_85',['Citing this Project',['../page__cite.html',1,'']]],
-  ['clear_86',['clear',['../classadiar_1_1builder.html#a0f9f6d71a0d5b40d6bf4200d8fb4fa4a',1,'adiar::builder']]],
-  ['consumer_87',['consumer',['../group__module____adiar.html#gaafe5cd654f645ab158a795ccb7fa4373',1,'adiar']]],
-  ['count_88',['count',['../structadiar_1_1stats__t.html#a9b328d7bcba90a84cdc1831417b90ac6',1,'adiar::stats_t']]],
-  ['count_5ft_89',['count_t',['../structadiar_1_1stats__t_1_1count__t.html',1,'adiar::stats_t']]]
+  ['cardinality_91',['cardinality',['../classadiar_1_1internal_1_1request_3_01Cardinality_00_010_00_01Inputs_01_4.html#a0fde49625c2daea2bdc085d89341d054',1,'adiar::internal::request&lt; Cardinality, 0, Inputs &gt;::cardinality()'],['../classadiar_1_1internal_1_1tuple.html#a8e3d5e4a206a01d99654004b10180a67',1,'adiar::internal::tuple::cardinality()']]],
+  ['child_92',['child',['../classadiar_1_1internal_1_1node.html#ac68f45304ca6ebfb88f3b56b15f74916',1,'adiar::internal::node']]],
+  ['children_93',['children',['../classadiar_1_1internal_1_1node.html#a54a2982e55702b8264ac2f2737e5f546',1,'adiar::internal::node']]],
+  ['children_5ftype_94',['children_type',['../classadiar_1_1internal_1_1node.html#a316005c0692ce0e36df339c0cd148f26',1,'adiar::internal::node::children_type()'],['../classadiar_1_1internal_1_1request_3_01Cardinality_00_010_00_01Inputs_01_4.html#a5a08397b61ba6cb68940eaaf12e43429',1,'adiar::internal::request&lt; Cardinality, 0, Inputs &gt;::children_type()']]],
+  ['citing_20this_20project_95',['Citing this Project',['../page__cite.html',1,'']]],
+  ['clear_96',['clear',['../classadiar_1_1builder.html#a0f9f6d71a0d5b40d6bf4200d8fb4fa4a',1,'adiar::builder']]],
+  ['consumer_97',['consumer',['../group__module____functional.html#ga99494f283acb45d89d508b47a9e7b4b5',1,'adiar']]],
+  ['cost_98',['cost',['../group__module____functional.html#ga3a1d245232939a5f2888cd002e5729b8',1,'adiar']]],
+  ['count_99',['count',['../structadiar_1_1statistics.html#aef4c38a2f1741aeaa3ac55f8ef912be7',1,'adiar::statistics']]],
+  ['count_5ft_100',['count_t',['../structadiar_1_1statistics_1_1count__t.html',1,'adiar::statistics']]]
 ];

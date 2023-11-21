@@ -11,7 +11,7 @@ var annotated_dup =
         [ "node", "classadiar_1_1internal_1_1node.html", "classadiar_1_1internal_1_1node" ],
         [ "ptr_uint64", "classadiar_1_1internal_1_1ptr__uint64.html", "classadiar_1_1internal_1_1ptr__uint64" ],
         [ "request", "classadiar_1_1internal_1_1request.html", "classadiar_1_1internal_1_1request" ],
-        [ "request< CARDINALITY, 0, INPUTS >", "classadiar_1_1internal_1_1request_3_01CARDINALITY_00_010_00_01INPUTS_01_4.html", "classadiar_1_1internal_1_1request_3_01CARDINALITY_00_010_00_01INPUTS_01_4" ],
+        [ "request< Cardinality, 0, Inputs >", "classadiar_1_1internal_1_1request_3_01Cardinality_00_010_00_01Inputs_01_4.html", "classadiar_1_1internal_1_1request_3_01Cardinality_00_010_00_01Inputs_01_4" ],
         [ "request_lt", "structadiar_1_1internal_1_1request__lt.html", "structadiar_1_1internal_1_1request__lt" ],
         [ "request_first_lt", "structadiar_1_1internal_1_1request__first__lt.html", "structadiar_1_1internal_1_1request__first__lt" ],
         [ "request_second_lt", "structadiar_1_1internal_1_1request__second__lt.html", "structadiar_1_1internal_1_1request__second__lt" ],
@@ -29,13 +29,13 @@ var annotated_dup =
         [ "tuple_fourth_lt", "structadiar_1_1internal_1_1tuple__fourth__lt.html", "structadiar_1_1internal_1_1tuple__fourth__lt" ],
         [ "__uid", "classadiar_1_1internal_1_1____uid.html", "classadiar_1_1internal_1_1____uid" ]
       ] ],
+      [ "exec_policy", "classadiar_1_1exec__policy.html", "classadiar_1_1exec__policy" ],
       [ "__bdd", "classadiar_1_1____bdd.html", "classadiar_1_1____bdd" ],
       [ "bdd", "classadiar_1_1bdd.html", "classadiar_1_1bdd" ],
       [ "__zdd", "classadiar_1_1____zdd.html", "classadiar_1_1____zdd" ],
       [ "zdd", "classadiar_1_1zdd.html", "classadiar_1_1zdd" ],
       [ "builder", "classadiar_1_1builder.html", "classadiar_1_1builder" ],
       [ "builder_ptr", "classadiar_1_1builder__ptr.html", "classadiar_1_1builder__ptr" ],
-      [ "map_pair", "classadiar_1_1map__pair.html", "classadiar_1_1map__pair" ],
-      [ "stats_t", "structadiar_1_1stats__t.html", "structadiar_1_1stats__t" ]
+      [ "statistics", "structadiar_1_1statistics.html", "structadiar_1_1statistics" ]
     ] ]
 ];

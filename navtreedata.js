@@ -53,7 +53,7 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", "namespacemembers_dup" ],
-        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Functions", "namespacemembers_func.html", "namespacemembers_func" ],
         [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ]
@@ -65,9 +65,10 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -79,11 +80,12 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"classadiar_1_1internal_1_1ptr__uint64.html#a9c461300a9872258451e34aec3ce00b5",
-"group__module____bdd.html#ga4939a4318a163955b52eb004cf9ea1c1",
-"group__module____zdd.html#gab48caadde8ab3b675529710aea6fdcc8",
-"structadiar_1_1stats__t_1_1equality__t_1_1fast__t.html#a7c866444f5a5cd978c3b4c6131e5c691"
+"adiar_8h_source.html",
+"classadiar_1_1internal_1_1node.html#a516ffbac2c415dd6dc1f4848a077ecaa",
+"group__module____adiar.html#ga41ee63e52a125ccc5ad3442b15cad182",
+"group__module____builder.html#ga0b9034da68843a3fff87b408e2c2b4fe",
+"group__module____zdd.html#gac2a28278086ebd64a086c8e087574632",
+"structadiar_1_1statistics_1_1equality__t_1_1slow__t.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

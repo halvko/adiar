@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data_5ft_704',['data_t',['../classadiar_1_1internal_1_1request__data.html#ac691886972a73be1f1fe4de2f854b1ed',1,'adiar::internal::request_data']]],
-  ['domain_5ferror_705',['domain_error',['../namespaceadiar.html#a6a0fcc1b673b3baa0c71c5b180e835a8',1,'adiar']]],
-  ['domain_5fvar_5ft_706',['domain_var_t',['../group__module____domain.html#ga47c91e9e9fc0519fe19a7ba9b9a972e3',1,'adiar']]]
+  ['data_5ftype_802',['data_type',['../classadiar_1_1internal_1_1request__data.html#a16b336739aed68b0bb57b0cc2d24db66',1,'adiar::internal::request_data']]],
+  ['domain_5ferror_803',['domain_error',['../namespaceadiar.html#a6a0fcc1b673b3baa0c71c5b180e835a8',1,'adiar']]],
+  ['domain_5fvar_804',['domain_var',['../group__module____domain.html#gabffcbfe753972ad7bb25244829364343',1,'adiar']]]
 ];

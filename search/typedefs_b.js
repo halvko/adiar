@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['out_5fidx_5ft_718',['out_idx_t',['../classadiar_1_1internal_1_1ptr__uint64.html#ab12f58460a4fa3ebab4db869d6b7d1f9',1,'adiar::internal::ptr_uint64']]],
-  ['out_5fof_5frange_719',['out_of_range',['../namespaceadiar.html#a134e4e5c35c637e80cb45c0eaf92aafe',1,'adiar']]]
+  ['runtime_5ferror_819',['runtime_error',['../namespaceadiar.html#a87e5ce87fef58e62010422983cf59fb0',1,'adiar']]]
 ];

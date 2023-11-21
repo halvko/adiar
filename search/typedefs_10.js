@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['uid_5ft_730',['uid_t',['../classadiar_1_1internal_1_1arc.html#a947fe1b5ab7191e795e6aade40b715bb',1,'adiar::internal::arc::uid_t()'],['../classadiar_1_1internal_1_1node.html#a73f60430eef5f60b28fb5c098a30e1bb',1,'adiar::internal::node::uid_t()']]],
-  ['unique_5fptr_731',['unique_ptr',['../namespaceadiar.html#a93a4ec5d0d8a82bb459ec5cd77f5af21',1,'adiar']]]
+  ['zdd_5fbuilder_829',['zdd_builder',['../group__module____builder.html#ga0b9034da68843a3fff87b408e2c2b4fe',1,'adiar']]],
+  ['zdd_5fptr_830',['zdd_ptr',['../group__module____builder.html#ga6aae72cb62fa2daf7cf69950931dcceb',1,'adiar']]]
 ];
