@@ -1,21 +1,14 @@
 var searchData=
 [
-  ['main_20page_187',['Main Page',['../index.html',1,'']]],
-  ['make_5fconsumer_188',['make_consumer',['../group__module____functional.html#ga923a64580e0b6124c8e9c9bafb27f7e0',1,'adiar::make_consumer(ForwardIt &amp;begin, ForwardIt &amp;end)'],['../group__module____functional.html#gaa70413032ba90587f737f9b84d98430c',1,'adiar::make_consumer(ForwardIt &amp;&amp;begin, ForwardIt &amp;&amp;end)']]],
-  ['make_5fgenerator_189',['make_generator',['../group__module____functional.html#ga837f233a1c35085481f6a10892ff6010',1,'adiar::make_generator(const RetType &amp;r)'],['../group__module____functional.html#ga10b08b986192013581d64d25d3dd622b',1,'adiar::make_generator(Stream &amp;s)'],['../group__module____functional.html#ga0242daaba794c8c685d66e8f87d14074',1,'adiar::make_generator(ForwardIt &amp;&amp;begin, ForwardIt &amp;&amp;end)'],['../group__module____functional.html#ga0bb6ca574a1999bd9895ed6517e92972',1,'adiar::make_generator(ForwardIt &amp;begin, ForwardIt &amp;end)']]],
-  ['make_5foptional_190',['make_optional',['../namespaceadiar.html#a4fd9ed34ea64378f1d7648bc54f45ce8',1,'adiar::make_optional(const T &amp;t)'],['../namespaceadiar.html#aa91ded045045dc2a2986d5d9ae87801d',1,'adiar::make_optional()']]],
-  ['make_5fpair_191',['make_pair',['../namespaceadiar.html#aae8217b473611a32308016804c24e6f3',1,'adiar']]],
-  ['make_5fshared_192',['make_shared',['../namespaceadiar.html#a6fcf0e1da0d4d2f38aa2c66b7e2564bc',1,'adiar']]],
-  ['make_5funique_193',['make_unique',['../namespaceadiar.html#ad471e76461365e2c558f243869ffc7bf',1,'adiar']]],
-  ['manual_20construction_194',['Manual Construction',['../page__builder.html',1,'']]],
-  ['max_5f1level_5fcut_195',['max_1level_cut',['../classadiar_1_1internal_1_1____dd.html#abf98f6daf805cee9a5d996660a1747f5',1,'adiar::internal::__dd']]],
-  ['max_5f2level_5fcut_196',['max_2level_cut',['../classadiar_1_1internal_1_1____dd.html#a8a1d14325ab214d7303c3ba2631503ad',1,'adiar::internal::__dd']]],
-  ['max_5fid_197',['max_id',['../classadiar_1_1internal_1_1dd.html#a060210f5bd662c1a740210ec50ed4ed3',1,'adiar::internal::dd::max_id()'],['../classadiar_1_1internal_1_1ptr__uint64.html#a77733d23cd546374adecc5d63bfae369',1,'adiar::internal::ptr_uint64::max_id()'],['../classadiar_1_1internal_1_1node.html#a22d5452d300b600e86eeed5360d634c3',1,'adiar::internal::node::max_id()']]],
-  ['max_5flabel_198',['max_label',['../classadiar_1_1internal_1_1ptr__uint64.html#ad235759a372ffef0c0a7569878d19cf7',1,'adiar::internal::ptr_uint64::max_label()'],['../classadiar_1_1internal_1_1node.html#a25d208db6a2ab84c215c4bd666606888',1,'adiar::internal::node::max_label()'],['../classadiar_1_1internal_1_1dd.html#a791e07735222a7e43e57bcdf643ff9f2',1,'adiar::internal::dd::max_label()']]],
-  ['max_5fout_5fidx_199',['max_out_idx',['../classadiar_1_1internal_1_1ptr__uint64.html#a176ec7aed80c95b2cf5126221a1d9baf',1,'adiar::internal::ptr_uint64']]],
-  ['max_5fwidth_200',['max_width',['../structadiar_1_1statistics_1_1prod2__t_1_1ra__t.html#aea1640423d8eb50f227d08f075f3592a',1,'adiar::statistics::prod2_t::ra_t']]],
-  ['memory_201',['memory',['../classadiar_1_1exec__policy.html#a3c5d03f2961f93a86e0ce24d9fcea29a',1,'adiar::exec_policy']]],
-  ['memory_5fmode_202',['memory_mode',['../classadiar_1_1exec__policy.html#afd18c4a65cf97751e01622fb42626ac0',1,'adiar::exec_policy']]],
-  ['min_5fwidth_203',['min_width',['../structadiar_1_1statistics_1_1prod2__t_1_1ra__t.html#a519111ff4fe88bae5800e8488359ab77',1,'adiar::statistics::prod2_t::ra_t']]],
-  ['minimum_5fmemory_204',['minimum_memory',['../group__module____adiar.html#ga3135db1bb2a7b25635cfd5abd5421f6b',1,'adiar']]]
+  ['nand_5fop_165',['nand_op',['../namespaceadiar.html#ab8229eb0cb1d012e1f6ce0ad3f8ef6db',1,'adiar']]],
+  ['negate_166',['negate',['../classadiar_1_1internal_1_1____dd.html#a44bc260b06baa04550c2828c1ce05e17',1,'adiar::internal::__dd::negate()'],['../classadiar_1_1internal_1_1dd.html#a2552dde28e5e045c0b1b9271e9db8807',1,'adiar::internal::dd::negate()']]],
+  ['nested_167',['Nested',['../classadiar_1_1exec__policy.html#a1d37a49f8ef3843dd33c0cc843313902a13c479c348969ab459513a4bfd559bb9',1,'adiar::exec_policy']]],
+  ['nested_5fsweeping_168',['nested_sweeping',['../structadiar_1_1statistics.html#a73464fed848ef4a2baeb8786b027859c',1,'adiar::statistics']]],
+  ['nested_5fsweeping_5ft_169',['nested_sweeping_t',['../structadiar_1_1statistics_1_1nested__sweeping__t.html',1,'adiar::statistics']]],
+  ['node_5ffile_170',['node_file',['../structadiar_1_1statistics.html#abd960bddf01859439b3bae5a72b6fc82',1,'adiar::statistics']]],
+  ['node_5ffile_5ft_171',['node_file_t',['../structadiar_1_1statistics_1_1node__file__t.html',1,'adiar::statistics']]],
+  ['node_5ffile_5ftype_172',['node_file_type',['../classadiar_1_1internal_1_1dd.html#a0cdac2e628e7e850c765f934b54bd6c6',1,'adiar::internal::dd']]],
+  ['node_5ftype_173',['node_type',['../classadiar_1_1internal_1_1____dd.html#aa1eafa94e60449e285536ba37968bd83',1,'adiar::internal::__dd::node_type()'],['../classadiar_1_1internal_1_1dd.html#ae61644f31c4f02c71977814fa92c2435',1,'adiar::internal::dd::node_type()']]],
+  ['nor_5fop_174',['nor_op',['../namespaceadiar.html#ae9b3689b3adcb95bc273404fca58b21f',1,'adiar']]],
+  ['number_5fof_5fterminals_175',['number_of_terminals',['../classadiar_1_1internal_1_1____dd.html#afbef57f343dbd466d9300bd282640058',1,'adiar::internal::__dd::number_of_terminals(const bool value) const'],['../classadiar_1_1internal_1_1____dd.html#a9269b183c9faf9a654aae8d0aef7e651',1,'adiar::internal::__dd::number_of_terminals() const'],['../classadiar_1_1internal_1_1dd.html#aa97722d01a0549b7ee27d9e9a1798e55',1,'adiar::internal::dd::number_of_terminals(const bool value) const'],['../classadiar_1_1internal_1_1dd.html#aef2f8cbd3631a1e42e6554eac2d7e132',1,'adiar::internal::dd::number_of_terminals() const']]]
 ];

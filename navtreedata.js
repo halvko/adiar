@@ -35,19 +35,8 @@ var NAVTREE =
       [ "Building with CMake", "page__getting_started.html#autotoc_md4", null ],
       [ "Usage", "page__getting_started.html#autotoc_md5", null ]
     ] ],
-    [ "Manual Construction", "page__builder.html", [
-      [ "Builder", "page__builder.html#autotoc_md6", null ],
-      [ "Example", "page__builder.html#autotoc_md7", null ]
-    ] ],
     [ "Examples", "page__examples.html", "page__examples" ],
-    [ "Citing this Project", "page__cite.html", [
-      [ "Lars Arge", "page__cite.html#autotoc_md19", null ],
-      [ "Adiar", "page__cite.html#autotoc_md20", [
-        [ "v1.0", "page__cite.html#autotoc_md21", null ],
-        [ "v1.1", "page__cite.html#autotoc_md22", null ],
-        [ "v1.2", "page__cite.html#autotoc_md23", null ]
-      ] ]
-    ] ],
+    [ "Papers", "page__papers.html", "page__papers" ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -64,8 +53,8 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
@@ -80,12 +69,11 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"adiar_8h_source.html",
-"classadiar_1_1internal_1_1node.html#a516ffbac2c415dd6dc1f4848a077ecaa",
-"group__module____adiar.html#ga41ee63e52a125ccc5ad3442b15cad182",
-"group__module____builder.html#ga0b9034da68843a3fff87b408e2c2b4fe",
-"group__module____zdd.html#gac2a28278086ebd64a086c8e087574632",
-"structadiar_1_1statistics_1_1equality__t_1_1slow__t.html"
+"",
+"group__module____adiar.html#ga9501bb9e871253964682b7ac1942f911",
+"group__module____bdd.html#gafec8f021fa4e36534d46099ed075c24a",
+"group__module____zdd.html#gabe38fcc7812544a97938aa268197edbe",
+"structadiar_1_1statistics_1_1quantify__t.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
