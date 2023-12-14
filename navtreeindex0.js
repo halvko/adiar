@@ -1,5 +1,6 @@
 var NAVTREEINDEX0 =
 {
+"":[5,0,0,0],
 "adiar_8h_source.html":[7,0,1,0,3],
 "annotated.html":[6,0],
 "bdd_2bdd_8h_source.html":[7,0,1,0,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "group__module____adiar.html#ga470bef8262702a036e8da5b8f83b1f16":[5,0,0,316],
 "group__module____adiar.html#ga4f0460393f1bb6651306587b11d64660":[5,0,0,31],
 "group__module____adiar.html#ga4f0460393f1bb6651306587b11d64660":[4,0,2],
-"group__module____adiar.html#ga9501bb9e871253964682b7ac1942f911":[5,0,0,30],
-"group__module____adiar.html#ga9501bb9e871253964682b7ac1942f911":[4,0,1]
+"group__module____adiar.html#ga9501bb9e871253964682b7ac1942f911":[5,0,0,30]
 };
