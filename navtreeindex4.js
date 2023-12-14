@@ -1,6 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"structadiar_1_1statistics_1_1quantify__t.html":[4,6,0,11],
 "structadiar_1_1statistics_1_1quantify__t.html#ab769667ff5ecea10ecd9e2589b7e72bf":[4,6,0,11,0],
 "structadiar_1_1statistics_1_1reduce__t.html":[4,6,0,12],
 "structadiar_1_1statistics_1_1reduce__t.html#a2519ee24c18aafb9177078b92d6c338d":[4,6,0,12,3],
@@ -13,5 +12,6 @@ var NAVTREEINDEX4 =
 "types_8h_source.html":[7,0,1,0,12],
 "version_8h_source.html":[7,0,0,0,0],
 "zdd_2zdd_8h_source.html":[7,0,1,0,2,0],
-"zdd_8h_source.html":[7,0,1,0,13]
+"zdd_8h_source.html":[7,0,1,0,13],
+"":[5,0,0,0]
 };

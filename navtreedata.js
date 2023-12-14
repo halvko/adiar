@@ -69,11 +69,11 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"group__module____adiar.html#ga9501bb9e871253964682b7ac1942f911",
+"adiar_8h_source.html",
+"group__module____adiar.html#gaaab9926b93b85f6010cbe053ba977047",
 "group__module____bdd.html#gafec8f021fa4e36534d46099ed075c24a",
-"group__module____zdd.html#gabe38fcc7812544a97938aa268197edbe",
-"structadiar_1_1statistics_1_1quantify__t.html"
+"group__module____zdd.html#gabe4de8babd55b4e737563d2317e8ac0e",
+"structadiar_1_1statistics_1_1quantify__t.html#ab769667ff5ecea10ecd9e2589b7e72bf"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
